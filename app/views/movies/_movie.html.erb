@@ -1,32 +1,9 @@
-<div id="<%= dom_id movie %>">
-  <p>
-    <strong>Title:</strong>
-    <%= movie.title %>
-  </p>
-
-  <p>
-    <strong>Genre:</strong>
-    <%= movie.genre %>
-  </p>
-
-  <p>
-    <strong>Release year:</strong>
-    <%= movie.release_year %>
-  </p>
-
-  <p>
-    <strong>Director:</strong>
-    <%= movie.director %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= movie.description %>
-  </p>
-
-  <p>
-    <strong>Image url:</strong>
-    <%= movie.image_url %>
-  </p>
-
+<div class="movie-card">
+  <h2><%= movie.title %> (<%= movie.release_year %>)</h2>
+  <p><strong>Genre:</strong> <%= movie.genre %></p>
+  <p><strong>Director:</strong> <%= movie.director %></p>
+  <p><%= movie.description %></p>
+  <div class="movie-poster">
+    <%= image_tag(movie.image_url, alt: "#{movie.title} Poster", width: "200") if movie.image_url.present? %>
+  </div>
 </div>
