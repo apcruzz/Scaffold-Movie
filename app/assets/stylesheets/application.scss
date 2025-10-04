@@ -121,3 +121,87 @@ body {
   max-width: 100%;
   height: auto;
 }
+
+/* === FORM STYLING === */
+form {
+  max-width: 600px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Label styling */
+form label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+/* Input, textarea, and select styling */
+form input[type="text"],
+form input[type="number"],
+form input[type="url"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Submit and cancel buttons */
+form .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+form .actions input[type="submit"],
+form .actions .btn {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form .actions input[type="submit"]:hover,
+form .actions .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Delete button color */
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #b02a37;
+}
+
+// .content {
+//   padding: 30px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: flex-start;
+// }
+
+
