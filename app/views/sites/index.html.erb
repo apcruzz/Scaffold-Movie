@@ -5,4 +5,33 @@
   <div class="home-buttons">
     <%= link_to "View Movies", movies_path, class: "btn" %>
   </div>
+
+    <div class="home-images">
+    <%= image_tag "movies.jpg", alt: "Movies", width: 400 %>
+    <%= image_tag "another.jpg", alt: "Another Image", width: 400 %>
+    <%= image_tag "third.jpg", alt: "Third Image", width: 400 %>
+    <%= image_tag "fourth.jpg", alt: "Fourth Image", width: 400 %>
+    <%= image_tag "fifth.jpg", alt: "Fifth Image", width: 400 %>
+    <%= image_tag "sixth.jpg", alt: "Sixth Image", width: 400 %>
+    </div>
+    <h2>Recently Added Movies</h2>
+    <div class="movie-grid">
+    <% if @movies.present? %>
+        <% @movies.each do |movie| %>
+        <div class="movie-card" onclick="window.location='<%= movie_path(movie) %>'" style="cursor:pointer;">
+            <% if movie.image_url.present? %>
+            <%= image_tag movie.image_url, class: "movie-poster" %>
+            <% else %>
+            <%= image_tag 'placeholder.jpg', class: "movie-poster" %>
+            <% end %>
+            <div class="movie-info">
+            <h2><%= movie.title %></h2>
+            <p><%= truncate(movie.description, length: 100) %></p>
+            </div>
+        </div>
+        <% end %>
+    <% else %>
+        <p>No movies yet. Try adding one!</p>
+    <% end %>
+    </div>
 </div>

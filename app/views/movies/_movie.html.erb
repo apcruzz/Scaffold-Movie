@@ -1,9 +1,13 @@
 <div class="movie-card">
-  <h2><%= movie.title %> (<%= movie.release_year %>)</h2>
-  <p><strong>Genre:</strong> <%= movie.genre %></p>
-  <p><strong>Director:</strong> <%= movie.director %></p>
-  <p><%= movie.description %></p>
-  <div class="movie-poster">
-    <%= image_tag(movie.image_url, alt: "#{movie.title} Poster", width: "200") if movie.image_url.present? %>
-  </div>
+  <%= link_to movie_path(movie), class: "movie-link" do %>
+    <div class="movie-image">
+      <%= image_tag movie.image_url, alt: movie.title if movie.image_url.present? %>
+    </div>
+    <div class="movie-info">
+      <h3><%= movie.title %> (<%= movie.release_year %>)</h3>
+      <p><strong>Genre:</strong> <%= movie.genre %></p>
+      <p><strong>Director:</strong> <%= movie.director %></p>
+      <p><strong>Year:</strong> <%= movie.release_year %></p>
+    </div>
+  <% end %>
 </div>
