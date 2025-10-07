@@ -25,7 +25,8 @@
             <%= image_tag 'placeholder.jpg', class: "movie-poster" %>
             <% end %>
             <div class="movie-info">
-            <h2><%= movie.title %></h2>
+            <h2><%= movie.title %> (<%= movie.release_year %>)</h2>
+            <p><strong><%= movie.genre %></strong></p>
             <p><%= truncate(movie.description, length: 100) %></p>
             </div>
         </div>

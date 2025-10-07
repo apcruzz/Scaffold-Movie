@@ -4,7 +4,7 @@
       <%= image_tag movie.image_url, alt: movie.title if movie.image_url.present? %>
     </div>
     <div class="movie-info">
-      <h3><%= movie.title %> (<%= movie.release_year %>)</h3>
+      <h2><%= movie.title %> (<%= movie.release_year %>)</h2>
       <p><strong>Genre:</strong> <%= movie.genre %></p>
       <p><strong>Director:</strong> <%= movie.director %></p>
       <p><strong>Year:</strong> <%= movie.release_year %></p>
